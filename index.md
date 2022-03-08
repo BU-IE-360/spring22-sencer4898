@@ -1,18 +1,18 @@
 
-# *Mehmet Ozer's Progress Journal for IE 582*
+# *Mehmet Ozer's Progress Journal for IE 360*
 
-This is the [Progress Journal](https://bu-ie-582.github.io/fall21-sencer4898/) created for the IE582 course of Bogazici University. Source files can be found [here](https://github.com/BU-IE-582/fall21-sencer4898).
+This is the [Progress Journal](https://bu-ie-360.github.io/spring22-sencer4898/) created for the IE360 course of Bogazici University. Source files can be found [here](https://github.com/BU-IE-360/spring22-sencer4898).
 
 
 ## Homeworks
 
 There will be a number of homeworks given for the course, for which descriptions and solutions will be shared in this page.
 
-### Homework 0
+<!-- ### Homework 0
 
 * [Homework 0 Instructions](https://bu-ie-582.github.io/fall21-sencer4898/files/IE582_Fall21_Homework_0.pdf)
 
-* Homework 0 was to create this page.
+* Homework 0 was to create this page. -->
 
 
 ### Homework 1
@@ -21,7 +21,7 @@ There will be a number of homeworks given for the course, for which descriptions
 
 * [Curse of Dimensionality and Data Manipulation on Images](https://bu-ie-582.github.io/fall21-sencer4898/files/HW1.html)
  
-### Homework 2
+<!-- ### Homework 2
 
 * [Homework 2 Instructions](https://bu-ie-582.github.io/fall21-sencer4898/files/IE582_Fall21_Homework2.pdf)
 
@@ -45,3 +45,4 @@ There will be a number of homeworks given for the course, for which descriptions
 
 * [Gender Prediction based on E-commerce Data](https://bu-ie-582.github.io/fall21-sencer4898/files/ProjectReport.html)
 
+ -->
