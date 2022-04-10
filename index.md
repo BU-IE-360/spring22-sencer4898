@@ -10,9 +10,9 @@ There will be a number of homeworks given for the course, for which descriptions
 
  ### Homework 1
 
-* [Homework 1 Instructions](https://bu-ie-582.github.io/fall21-sencer4898/files/HW1/IE360_Spring22_HW1.pdf)
+* [Homework 1 Instructions](https://bu-ie-360.github.io/spring22-sencer4898/files/HW1/IE360_Spring22_HW1.pdf)
 
-* [Visualization of Related Economic Statistics and a Google Trends Data](https://bu-ie-582.github.io/fall21-sencer4898/files/HW1/IE360_HW1.html)
+* [Visualization of Related Economic Statistics and a Google Trends Data](https://bu-ie-360.github.io/spring22-sencer4898/files/HW1/IE360_HW1.html)
 
 <!--
 ### Homework 1
