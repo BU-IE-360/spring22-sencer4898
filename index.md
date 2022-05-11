@@ -14,6 +14,12 @@ There will be a number of homeworks given for the course, for which descriptions
 
 * [Visualization of Related Economic Statistics and a Google Trends Data](https://bu-ie-360.github.io/spring22-sencer4898/files/HW1/IE360_HW1.html)
 
+ ### Homework 2
+
+* [Homework 2 Instructions](https://bu-ie-360.github.io/spring22-sencer4898/files/HW2/IE360_Spring22_HW2.pdf)
+
+* [Time Series Regression on Quarterly Unleaded Gasoline Sales](https://bu-ie-360.github.io/spring22-sencer4898/files/HW2/IE360_HW2.html)
+
 <!--
 ### Homework 1
 
