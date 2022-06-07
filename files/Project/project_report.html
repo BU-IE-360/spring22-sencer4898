@@ -14006,12 +14006,30 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The problem is to predict the hourly production values of a solar energy plant located in Turkey. A regression approach combined with a time-series model was the first proposition to be used by the group. The data set consisted of hourly production values and weather conditions of the given hours. The data set was in long format, maditr package’s dcast function was used to convert the data to wide format. Also, there was missing production values for 7 days, probably caused by some maintenance or database issue. Therefore, an average of 6 values, the same hour’s production values for the 3 days before and 3 days after is calculated for the corresponding hour and day’s production value. The brief explanations for the variables in the data set is provided below:</p>
+<p>The problem is to predict the hourly production values of a solar energy plant located in Turkey. A regression approach combined with a time-series model was the first proposition to be used by the group. The data set consisted of hourly production values and weather conditions of the given hours. The data set was in long format, maditr package’s dcast function was used to convert the data to wide format.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Also, there were missing production values for 7 days, probably caused by some maintenance or database issue. Therefore, an average of 6 values, the same hour’s production values for the 3 days before and 3 days after is calculated for the corresponding hour and day’s production value. As an example, Şub 20 (February 20) is missing in the data, and its values is filled with mean of corresponding hourly values of past and following 3 days.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="missing_values.png" alt="missing_values"></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The brief explanations for the variables in the data set is provided below:</p>
 <ul>
 <li>TEMP: Temperature in units of Kelvin</li>
-<li>REL_HUMIDITY: Relative humidity</li>
-<li>DSWRF: Downward shortwave radiation flux</li>
-<li>CLOUD_LOW_LAYER: In terms of percentage, for low level type of clouds total cloud cover data.</li>
+<li>REL_HUMIDITY: Relative Humidity</li>
+<li>DSWRF: Downward Shortwave Radiation Flux</li>
+<li>CLOUD_LOW_LAYER: Total cloud cover data for low-level type of clouds, in terms of percentage.</li>
 </ul>
 
 </div>

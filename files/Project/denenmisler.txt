@@ -1,3 +1,6 @@
 normalized production
 DSWRF*(100-Cloud)
 monthly seasonality
+
+
+residualların inputlar ile ilişkisi
