@@ -14,35 +14,8 @@ There will be a number of homeworks given for the course, for which descriptions
 
 * [Visualization of Related Economic Statistics and a Google Trends Data](https://bu-ie-360.github.io/spring22-sencer4898/files/HW1/IE360_HW1.html)
 
-<!--
-### Homework 1
+ ### Homework 2
 
-* [Homework 1 Instructions](https://bu-ie-582.github.io/fall21-sencer4898/files/IE582_Fall21_Homework1.pdf)
+* [Homework 2 Instructions](https://bu-ie-360.github.io/spring22-sencer4898/files/HW2/IE360_Spring22_HW2.pdf)
 
-* [Curse of Dimensionality and Data Manipulation on Images](https://bu-ie-582.github.io/fall21-sencer4898/files/HW1.html)
- 
-<!-- ### Homework 2
-
-* [Homework 2 Instructions](https://bu-ie-582.github.io/fall21-sencer4898/files/IE582_Fall21_Homework2.pdf)
-
-* [Dimensionality Reduction, MDS with Turkey Map and PCA on Time series Data](https://bu-ie-582.github.io/fall21-sencer4898/files/HW2.html)
-
-### Homework 3
-
-* [Homework 3 Instructions](https://bu-ie-582.github.io/fall21-sencer4898/files/IE582_Fall21_Homework3.pdf)
-
-* [KNN and Logistic Regression on Time Series Data](https://bu-ie-582.github.io/fall21-sencer4898/files/HW3.html)
-
-### Homework 4
-
-* [Homework 4 Instructions](https://bu-ie-582.github.io/fall21-sencer4898/files/IE582_Fall21_Homework4.pdf)
-
-* [Multiple Instance Learning on Musk1 Data](https://bu-ie-582.github.io/fall21-sencer4898/files/HW4.html)
-
-### Final Project
-
-* [Project Instructions](https://bu-ie-582.github.io/fall21-sencer4898/files/IE582_Fall21_Project.pdf)
-
-* [Gender Prediction based on E-commerce Data](https://bu-ie-582.github.io/fall21-sencer4898/files/ProjectReport.html)
-
- -->
+* [Time Series Regression on Quarterly Unleaded Gasoline Sales](https://bu-ie-360.github.io/spring22-sencer4898/files/HW2/IE360_HW2.html)
