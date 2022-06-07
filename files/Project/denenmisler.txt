@@ -1,0 +1,3 @@
+normalized production
+DSWRF*(100-Cloud)
+monthly seasonality
