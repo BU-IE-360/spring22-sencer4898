@@ -14305,7 +14305,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Input and output values do not exactly have a linear relationship between each other. For example, in linear regression, we assume that if value of an input with a positive coefficient increases, value of output keeps increasing as well. However, even if DSWRF value keeps increasing, if the weather is cloudy, production will not exceed a certain threshold. Therefore, interaction between variables are really important.</p>
+<p>Input and output values do not exactly have a linear relationship between each other. For example, in linear regression, we assume that if value of an input with a positive coefficient keeps increasing, value of output keeps increasing as well. However, even if DSWRF value keeps increasing, if the weather is cloudy, production will not exceed a certain threshold. Therefore, interaction between variables are really important.</p>
 <p>With this in mind, we introduced new variables that might catch this relation between default variables. Examples of these new variables are:</p>
 <ul>
 <li>DSWRF x (100-CLOUD_LOW_LAYER)</li>
@@ -14345,7 +14345,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>As a result of our work, we found that the most important variable for each model turned out to be the smoothed production. This is because recent production values are correlated to tomorrow's production values, and it is unlikely that tomorrow will have drastically different values from the near past. Other predictors were expected to be important, however they turned out to be not that important. This is probably because their effect is more complex and not easy to interpret.</p>
+<p>As a result of our work, we found that the most important variable for each model turned out to be the smoothed production. This is because recent production values are correlated to tomorrow's production values, and it is unlikely that tomorrow will have drastically different values from the near past. Other predictors were expected to be very important, however they turned out to be not that important. This is probably because their effect is more complex and not easy to interpret.</p>
 
 </div>
 </div>
@@ -14362,7 +14362,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Data preparation and model training / prediction codes can be found using the links provided below.</p>
+<p>Data preparation and model training / prediction codes can be found using the links provided below. These are the final codes used for automated prediction each day.</p>
 
 </div>
 </div>
@@ -14371,8 +14371,21 @@ a.anchor-link {
 <ul>
 <li><a href="https://github.com/BU-IE-360/spring22-sencer4898/blob/gh-pages/files/Project/codes/data_preparation.r">Data Preparation</a></li>
 <li><a href="https://github.com/BU-IE-360/spring22-sencer4898/blob/gh-pages/files/Project/codes/automated_prediction.R">Model Training / Prediction</a></li>
+</ul>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We also used the codes below for determining the best model for each hour seperately.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
 <li><a href="https://github.com/BU-IE-360/spring22-sencer4898/blob/gh-pages/files/Project/codes/monte_carlo_for_best_variables.R">Variable Selection Using Monte Carlo Approach</a></li>
-<li><a href="https://github.com/BU-IE-360/spring22-sencer4898/blob/gh-pages/files/Project/codes/gridsearch_for_temperature_constant.R">Grid Search For the Constant in the Proposed Temperature Function</a></li>
+<li><a href="https://github.com/BU-IE-360/spring22-sencer4898/blob/gh-pages/files/Project/codes/gridsearch_for_temperature_constant.R">Grid Search For the Constant in the Proposed Nonlinear Temperature Function</a></li>
 <li><a href="https://github.com/BU-IE-360/spring22-sencer4898/blob/gh-pages/files/Project/codes/arima_model_best.R">Arima Model Selection on Residuals</a></li>
 </ul>
 
