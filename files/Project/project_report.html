@@ -13982,7 +13982,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>Nergiz Selin Angın - </li>
+<li>Nergiz Selin Angın - 2018402117</li>
 <li>Halis Oğuz - 2018402129</li>
 <li>Mehmet Özer - 2016402129</li>
 </ul>
@@ -13994,7 +13994,9 @@ a.anchor-link {
 <h2 id="TABLE-OF-CONTENTS">TABLE OF CONTENTS<a class="anchor-link" href="#TABLE-OF-CONTENTS">&#182;</a></h2><ul>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#descriptive_analysis">Descriptive Analysis</a></li>
+<li><a href="#literature">Related Literature</a></li>
 <li><a href="#approach">Approach</a></li>
+<li><a href="#excluded">Methods Excluded From The Final Approach</a></li>
 <li><a href="#results">Results</a></li>
 <li><a href="#conclusion">Conclusion and Future Work</a></li>
 <li><a href="#code">Code</a></li>
@@ -14074,6 +14076,51 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Another problem with the output variable is that it is not normally distributed, violating one of the assumptions of linear regression. Even though we can build a linear regression model with this type of output, it will not be as good. Thus, we tried to make it similar to normal by applying some transformations. Box-cox transformation is the most effective transformation. It is a monotone transformation and covers variety of transformations such as log transformation. Also, squaring the output is another option that we tried. In the images below, we showed the original data, box-cox transformed data with optimal lambda, and squared data.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<center> <h1>Original Production Distribution</h1> </center>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="output_distribution.png" alt="Output Data"></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<center> <h1>Distribution after Box-Cox Transformation with Optimal Lambda</h1> </center>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="output_with_boxcox.png" alt="Box-Cox Data"></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<center> <h1>Distribution after Square Transformation</h1> </center>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="output_squared.png" alt="Squared Data"></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Unfortunately, none of the transformation were helpful at getting a normal-like distributed output. We decided to continue with the original output values.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>We are also given a weather data, which consists of previous weather values and future forecasts for some categories. These categories are Cloud Low Layer, Relative Humidity, Temperature and DSWRF, each are given their hourly values for 9 different locations. Values of a specific category for different locations are highly correlated because locations are close to each other. Therefore, using values for all locations is not necessary, and might lead to a possible overfitting.</p>
 
 </div>
@@ -14124,13 +14171,34 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Related-Literature-">Related Literature <a class="anchor" id="literature" /><a class="anchor-link" href="#Related-Literature-">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Time series analysis models (such as ARIMA and SARIMA) perform relatively good for data with seasonal patterns. However, if the output is heavily affected by the externalities, time series analysis approaches are not enough themselves and regression based approaches are required. Solar energy production data does not have seasonalities similar to a daily gross sales data of a retail company, which has strong weekly and monthly seasonalities. Solar data has somewhat hourly seasonality. It is heavily affected by external variables, such as cloud low layer and DSWRF. For these reasons, we decided to apply linear regression for forecasting to catch effects of externalities. We prepared models for each hour to catch seasonal patterns of each hour. After removing external effects with linear regression, we trained ARIMA model on the residuals to better catch seasonal patterns, if exists any.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Approach-">Approach <a class="anchor" id="approach" /><a class="anchor-link" href="#Approach-">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For hours from 6 to 19, a different model is established for each hour. Considering the historical data, the production of all the remaining hours is considered to be zero. The grid search method is used to determine the parameters to be used in each model. "Set.seed(500)" is used in each grid search to get the same values in each attempt. 4 different weather variables are provided in the data for each of the 9 coordinates. This will make 9 coordinates multiplied with 4 variables, 36 weather variables. When we try to set up a linear model with these weather variables, using more than 2 location values of the same variable disturbs the model. The coefficients of the same variable can appear in opposite signs for different locations. That's why the maximum 2 coordinate values of the same weather variable are evaluated when doing a grid search. Since a separate model was established for each hour, a separate grid search is performed for all the parameters to be used for each hour. 1000 different models using different weather variable combinations are compared according to weighted mean absolute percentage errors and the variables giving the minimum WMAPE are selected for use in the model.</p>
+<h4 id="Monte-Carlo-Approach">Monte Carlo Approach<a class="anchor-link" href="#Monte-Carlo-Approach">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For hours from 6 to 19, a different model is established for each hour. Considering the historical data, the production of all the remaining hours is considered to be zero. The monte carlo method is used to determine the variables to be used in each model. "set.seed(500)" is used in each simulation run to get the same values in each attempt. 4 different weather variables are provided in the data for each of the 9 coordinates. This will make 9 coordinates multiplied with 4 variables, 36 weather variables. When we try to set up a linear model with these weather variables, using more than 2 location values of the same variable disturbs the model. The coefficients of the same variable can appear in opposite signs for different locations. That's why the maximum 2 coordinate values of the same weather variable are evaluated when doing a simulation. Since a separate model was established for each hour, a separate simulation is performed for all the parameters to be used for each hour. 1000 different models using randomly selected weather variable combinations are compared according to weighted mean absolute percentage errors and the variables giving the minimum WMAPE are selected for use in the model.</p>
 
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Nonlinear-Temperature-Function-as-a-Variable">Nonlinear Temperature Function as a Variable<a class="anchor-link" href="#Nonlinear-Temperature-Function-as-a-Variable">&#182;</a></h4>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14147,6 +14215,11 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="ARIMA-on-the-Residuals">ARIMA on the Residuals<a class="anchor-link" href="#ARIMA-on-the-Residuals">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>After determining which weather parameters will be used and the parameter related to the temperature, the model is set for each hour with the specified parameters. Then, the ARIMA model is built on the residuals of the models. The ARIMA model parameters are also found again with grid search. The autoregressive parameter (p) value is simulated from 0 to 15; the differencing parameter (d) value is simulated from 0 to 2; the moving average parameter value (q) is simulated from 0 to 15. The AIC values of the resulting models are compared, and the parameters that give the smallest AIC value are selected as the ARIMA parameters.</p>
 
 </div>
@@ -14154,6 +14227,91 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Finally, the parameters of the ARIMA model are also determined, and it is decided whether the ARIMA model should be added to the main model by looking at the WMAPEs of both models.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Checking-the-Residuals">Checking the Residuals<a class="anchor-link" href="#Checking-the-Residuals">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="model_residuals.png" alt="model residuals"></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>After applying all the steps above, we checked the residuals to see if we can improve the model even further. We didn't see any significant autocorrelation for the residuals. Only lags that had ACF values above threshold was Lag 11 and Lag 20, which we couldn't make sense of. Addition of these lags didn't improve the model either, therefore we concluded that residuals were fine in terms of autocorrelation.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Residuals were distributed similar to a normal distribution, with some skew to left. Also, they are randomly deviating around 0, therefore we concluded that we can't improve the model with respect to residuals.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="input_residual_correlation.png" alt="input_residual"></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We checked if the residuals had any significant correlation left with the inputs. There were 0 correlation between residuals and input variables, meaning that we can't improve the model anymore using these input variables.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We didn't check CCF values of input variables and residuals because it doesn't make sense that production values are affected by the previous days' weather conditions.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Methods-Excluded-From-The-Final-Approach-">Methods Excluded From The Final Approach <a class="anchor" id="excluded" /><a class="anchor-link" href="#Methods-Excluded-From-The-Final-Approach-">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Binary-Temperature">Binary Temperature<a class="anchor-link" href="#Binary-Temperature">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The relationship between temperature and production is not linear. It is known that raising temperature values to a certain threshold increases production, but excessive heat after a certain threshold disrupts production. It can be said that production is negatively affected after a certain unknown value. By trying different values, value of 300 found to be performing the best. Therefore, a binary variable has been added to the data (named as 'binary_temp' in the code script). This variable takes the value "1" in cases where the average of the temperature values in the 9 coordinates is equal to 300 or more than 300, while in other cases it takes the value “0". However, when a model is created using this binary variable, the p-value of the variable has become too small. Because of this, we can say that binary variable is insufficient to decipher this nonlinear relationship between temperature and production. As a result, the use of this variable in the model was abandoned.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Normalized-Production">Normalized Production<a class="anchor-link" href="#Normalized-Production">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Production capacity, as shown above, changes throughout the data. This makes it harder to fit a linear regression model that predicts the production. For this reason, we created a new variable names 'Normalized Production'. To calculate this variable, we first calculated maximum values in a 21-day window (from -10 to +10 days). These maximum values somehow act as the capacity of the given day. Then, we divided production value to this new value, which is similar to normalizing the output with the capacity (maximum value). Instead of trying to forecast production, we forecasted normalized production and transformed it to production afterwards. This approach seemed promising, however, it performed poorly. Therefore, we chose not to use it.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Interaction-Terms">Interaction Terms<a class="anchor-link" href="#Interaction-Terms">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Input and output values do not exactly have a linear relationship between each other. For example, in linear regression, we assume that if value of an input with a positive coefficient increases, value of output keeps increasing as well. However, even if DSWRF value keeps increasing, if the weather is cloudy, production will not exceed a certain threshold. Therefore, interaction between variables are really important.</p>
+<p>With this in mind, we introduced new variables that might catch this relation between default variables. Examples of these new variables are:</p>
+<ul>
+<li>DSWRF x (100-CLOUD_LOW_LAYER)</li>
+<li>DSWRF x (100-RELATIVE_HUMIDITY)</li>
+</ul>
+<p>CLOUD_LOW_LAYER and RELATIVE_HUMIDITY values are percanteges, therefore we created these variables. First formula implies that in a fully cloudy weather, DSWRF has 0 effect and vice versa. This variables turned out to have nonsignificant effects in the model, therefore we didn't use them.</p>
 
 </div>
 </div>
@@ -14213,6 +14371,9 @@ a.anchor-link {
 <ul>
 <li><a href="https://github.com/BU-IE-360/spring22-sencer4898/blob/gh-pages/files/Project/codes/data_preparation.r">Data Preparation</a></li>
 <li><a href="https://github.com/BU-IE-360/spring22-sencer4898/blob/gh-pages/files/Project/codes/automated_prediction.R">Model Training / Prediction</a></li>
+<li><a href="https://github.com/BU-IE-360/spring22-sencer4898/blob/gh-pages/files/Project/codes/monte_carlo_for_best_variables.R">Variable Selection Using Monte Carlo Approach</a></li>
+<li><a href="https://github.com/BU-IE-360/spring22-sencer4898/blob/gh-pages/files/Project/codes/gridsearch_for_temperature_constant.R">Grid Search For the Constant in the Proposed Temperature Function</a></li>
+<li><a href="https://github.com/BU-IE-360/spring22-sencer4898/blob/gh-pages/files/Project/codes/arima_model_best.R">Arima Model Selection on Residuals</a></li>
 </ul>
 
 </div>

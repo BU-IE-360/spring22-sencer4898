@@ -1,7 +1,0 @@
-residualların inputlar ile ilişkisi
-
-
-how do we do validation
-
-
-arima was succesful for some of the models, but not effective for others.
