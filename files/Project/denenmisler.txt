@@ -1,6 +1,9 @@
 normalized production
 DSWRF*(100-Cloud)
-monthly seasonality
-
+binary_temp
 
 residualların inputlar ile ilişkisi
+
+
+
+arima was succesful for some of the models, but not effective for others.

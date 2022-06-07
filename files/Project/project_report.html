@@ -13993,8 +13993,11 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="TABLE-OF-CONTENTS">TABLE OF CONTENTS<a class="anchor-link" href="#TABLE-OF-CONTENTS">&#182;</a></h2><ul>
 <li><a href="#introduction">Introduction</a></li>
-<li><a href="#approach">Approach</a></li>
 <li><a href="#descriptive_analysis">Descriptive Analysis</a></li>
+<li><a href="#approach">Approach</a></li>
+<li><a href="#results">Results</a></li>
+<li><a href="#conclusion">Conclusion and Future Work</a></li>
+<li><a href="#code">Code</a></li>
 </ul>
 
 </div>
@@ -14024,10 +14027,10 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The brief explanations for the variables in the data set is provided below:</p>
+<p>The brief explanations for the variables in the data set are provided below:</p>
 <ul>
 <li>TEMP: Temperature in units of Kelvin</li>
-<li>REL_HUMIDITY: Relative Humidity</li>
+<li>REL_HUMIDITY: Relative Humidity, in terms of percentage.</li>
 <li>DSWRF: Downward Shortwave Radiation Flux</li>
 <li>CLOUD_LOW_LAYER: Total cloud cover data for low-level type of clouds, in terms of percentage.</li>
 </ul>
@@ -14036,7 +14039,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>There remains one last problem with the target variable after the manipulations given above are provided. The facility was not operating with the full capacity at the time horizon of interest. It is likely that there were additional installations of solar panels/ or some maintenance done during some times that they would cause an unexplainable step drop or increase in the observed production values. A smoothing should be applied to get a picture of the true level at a specific time in the time horizon. A moving average method with parameter k=21 is used which added a column to the data to indicate the production capacity as a variable. 10 days after and before values with the center value is used with an average with equal weights so that one could obtain a clear and unbiased variable for the true production level at that time. The maximum of 21 days and k=11 days period is also evaluated for usage however k=21 average for center value yielded the best results for explaining the production level overall. Thus, k=21 center moving average smoothing is used. The first 10 and last 10 days have no variable due to the fact that they do not have 10 days ahead of them so the first obtained and last obtained value is duplicated. It has been assumed that they provide the least biased information regarding the capacity.</p>
+<p>There remains one last problem with the target variable after the manipulations given above are applied. The facility was not operating with the full capacity at the time horizon of interest. It is likely that there were additional installations of solar panels/ or some maintenance done during some times that they would cause an unexplainable step drop or increase in the observed production values. A smoothing should be applied to get a picture of the true level at a specific time in the time horizon. A moving average method with parameter k=21 is used which added a column to the data to indicate the production capacity as a variable. 10 days after and before values with the center value is used with an average with equal weights so that one could obtain a clear and unbiased variable for the true production level at that time. The maximum of 21 days and k=11 days period is also evaluated for usage however k=21 average for center value yielded the best results for explaining the production level overall. Thus, k=21 center moving average smoothing is used. The first 10 and last 10 days have no variable due to the fact that they do not have 10 days ahead of them so the first obtained and last obtained value is duplicated. It has been assumed that they provide the least biased information regarding the capacity.</p>
 
 </div>
 </div>
@@ -14059,7 +14062,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Original time series data consist of hourly production values for dates from 2021-02-01 to two days before current date. Analyzing the data, we can see that there is an upper limit for the production values, of which production values cannot exceed. Construction of the production facility started in beginning of 2021. For this reason, capacity is small at the beginning of the data and increasing constantly until June 2021. Then, it is constant for some time around 40KWp. It decreases to 35KWp in the beginning of 2022 and stays on that level since. This maximum capacity change is a significant problem to deal with because linear regression works in an additive manner and it will find the optimal coefficients for an assumed maximum capacity, which will not work well with capacity change.</p>
+<p>Original time series data consist of hourly production values for dates from 2021-02-01 to two days before current date. Analyzing the data, we can see that there is an upper limit for the production values, of which production values cannot exceed. Construction of the production facility started in beginning of 2021. For this reason, capacity is small at the beginning of the data and increasing constantly until June 2021. Then, it is constant for some time around 40KWp. It decreases to 35KWp in the beginning of 2022 and stays on that level since (until recently). This maximum capacity change is a significant problem to deal with because linear regression works in an additive manner and it will find the optimal coefficients for an assumed maximum capacity, which will not work well with capacity change.</p>
 
 </div>
 </div>
@@ -14072,6 +14075,12 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>We are also given a weather data, which consists of previous weather values and future forecasts for some categories. These categories are Cloud Low Layer, Relative Humidity, Temperature and DSWRF, each are given their hourly values for 9 different locations. Values of a specific category for different locations are highly correlated because locations are close to each other. Therefore, using values for all locations is not necessary, and might lead to a possible overfitting.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="sample_data.png" alt="sample_data"></p>
 
 </div>
 </div>
@@ -14091,7 +14100,19 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Newly created smoothed production variable is highly correlated (=0.789) with the production value. This variable will be important for our prediction. Only problem is that this variable takes the mean of previous and future 21 days’ production values and fills the remaining values with the last day’s smoothed production value. If we want to predict values near a season change, this variable will create bias and result in an overprediction or underprediction.</p>
+<p><img src="correlations.png" alt="correlations"></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Newly created smoothed production variable (named as 'capacity' in the code script) is highly correlated (=0.789) with the production value. This variable will be important for our prediction. Only problem is that this variable takes the mean of previous and future 21 days’ production values and fills the remaining values with the last day’s smoothed production value. If we want to predict values near a season change, this variable will create bias and result in an overprediction or underprediction.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="correlation_smoothed_production.png" alt="smoothed_production_correlation"></p>
 
 </div>
 </div>
@@ -14138,7 +14159,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h3>
+<h3 id="Results-">Results <a class="anchor" id="results" /><a class="anchor-link" href="#Results-">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14161,7 +14182,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Conclusion-and-Future-Work">Conclusion and Future Work<a class="anchor-link" href="#Conclusion-and-Future-Work">&#182;</a></h3>
+<h3 id="Conclusion-and-Future-Work-">Conclusion and Future Work <a class="anchor" id="conclusion" /><a class="anchor-link" href="#Conclusion-and-Future-Work-">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14173,6 +14194,26 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>There could be some other methods and techniques that could yield better or worse results, a trial and error process could be conducted to expose a better approach. There are many things that can be improved by using larger data and different predictors. In order to develop the model, the effects of variables on real-life electricity production can be investigated and variable values could be used in different combinations and with different formulas.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Code-">Code <a class="anchor" id="code" /><a class="anchor-link" href="#Code-">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Data preparation and model training / prediction codes can be found using the links provided below.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><a href="https://github.com/BU-IE-360/spring22-sencer4898/blob/gh-pages/files/Project/codes/data_preparation.r">Data Preparation</a></li>
+<li><a href="https://github.com/BU-IE-360/spring22-sencer4898/blob/gh-pages/files/Project/codes/automated_prediction.R">Model Training / Prediction</a></li>
+</ul>
 
 </div>
 </div>
