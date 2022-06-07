@@ -19,3 +19,9 @@ There will be a number of homeworks given for the course, for which descriptions
 * [Homework 2 Instructions](https://bu-ie-360.github.io/spring22-sencer4898/files/HW2/IE360_Spring22_HW2.pdf)
 
 * [Time Series Regression on Quarterly Unleaded Gasoline Sales](https://bu-ie-360.github.io/spring22-sencer4898/files/HW2/IE360_HW2.html)
+
+### Project
+
+* [Project Instructions](https://bu-ie-360.github.io/spring22-sencer4898/files/Project/IE360_Spring22_Project.pdf)
+
+* [Time Series Regression on Quarterly Unleaded Gasoline Sales](https://bu-ie-360.github.io/spring22-sencer4898/files/Project/project_report.html)
