@@ -24,4 +24,4 @@ There will be a number of homeworks given for the course, for which descriptions
 
 * [Project Instructions](https://bu-ie-360.github.io/spring22-sencer4898/files/Project/IE360_Spring22_Project.pdf)
 
-* [Time Series Regression on Quarterly Unleaded Gasoline Sales](https://bu-ie-360.github.io/spring22-sencer4898/files/Project/project_report.html)
+* [Solar Power Forecasting](https://bu-ie-360.github.io/spring22-sencer4898/files/Project/project_report.html)
